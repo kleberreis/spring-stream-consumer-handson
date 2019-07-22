@@ -1,0 +1,22 @@
+server:
+  port: 9093
+  
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: order.one.teste01
+          content-type: application/text
+          group: handsonGroup2
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 35.231.150.6
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
